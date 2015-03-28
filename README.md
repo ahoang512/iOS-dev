@@ -1,3 +1,2 @@
 # iOS-dev
-Kevin Largo
-Anthony Hoang
+Kevin Largo and Anthony Hoang
