@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tanks</title>
+    <link rel="stylesheet" type="text/css" href="./css/tanks.css">
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/gameView.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <script type="text/javascript">
+      var canvasEl = document.getElementById("canvas");
+      var game = new Tanks.Game(600, 400);
+      var gameView = new Tanks.GameView(game, canvasEl);
+
+    </script>
+  </body>
+</html>
