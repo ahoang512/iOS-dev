@@ -8,13 +8,13 @@
     <script type="text/javascript" src="./js/gameView.js"></script>
   </head>
   <body>
+    <h1>Tanks</h1>
     <canvas id="canvas"></canvas>
 
     <script type="text/javascript">
       var canvasEl = document.getElementById("canvas");
-      var game = new Tanks.Game(800, 600);
+      var game = new Tanks.Game(800, 400);
       var gameView = new Tanks.GameView(game, canvasEl);
-
     </script>
   </body>
 </html>
