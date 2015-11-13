@@ -6,6 +6,7 @@
   var Game = Tanks.Game = function (width, height) {
     this.DIM_X = width;
     this.DIM_Y = height;
+    this.floorHeight = 100;
   }
 
 })(this);

@@ -15,7 +15,13 @@
   GameView.prototype.setupMap = function () {
     var ctx = this.canvas.getContext("2d");
     ctx.fillStyle = "#008080";
-    ctx.fillRect(0, this.game.DIM_Y - 100, this.game.DIM_X, 100);
+    var leftX = 0;
+    var rightX = this.game.DIM_X/2 + 50;
+    var Y = this.game.DIM_Y - this.game.floorHeight;
+    var width = this.game.DIM_X/2 - 50;
+    var height = this.game.floorHeight;
+    ctx.fillRect(leftX,Y ,width , height);
+    ctx.fillRect(rightX,Y ,width , height);
   };
 
 })(this);
