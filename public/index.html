@@ -5,6 +5,7 @@
     <title>Tanks</title>
     <link rel="stylesheet" type="text/css" href="./css/tanks.css">
     <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/tank.js"></script>
     <script type="text/javascript" src="./js/gameView.js"></script>
   </head>
   <body>
@@ -15,6 +16,8 @@
       var canvasEl = document.getElementById("canvas");
       var game = new Tanks.Game(800, 400);
       var gameView = new Tanks.GameView(game, canvasEl);
+      var redTank = new Tanks.Tank(0);
+      var blueTank = new Tanks.Tank(1);
     </script>
   </body>
 </html>
