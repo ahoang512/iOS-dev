@@ -3,5 +3,9 @@
     root.Tanks = {};
   }
 
-  
+  var MovingObject = Tanks.MovingObject = function (details) {
+
+  };
+
+
 })(window, document);

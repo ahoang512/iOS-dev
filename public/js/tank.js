@@ -5,19 +5,24 @@
 
   var Tank = Tanks.Tank = function (team) {
     // 0 red, 1 blue
-    var obj = {};
-    this.obj = obj;
-
+    var details = {};
+    this.details = details;
     if (team === 0){
-      obj.color = "#FF0000";
+      details.pos = [150,282.5];
+      details.color = "#FF0000";
     }else{
-      obj.color = "#0000FF";
+      details.pos = [650,282.5];
+      details.color = "#0000FF";
     }
   }
 
-  Tank.prototype.draw = function(ctx,x,y) {
+  Tanks.Util.inherits(Tank, Tanks.MovingObject);
+
+  Tank.prototype.draw = function(ctx) {
+    var x = this.details.pos[0];
+    var y = this.details.pos[1];
     ctx.translate(x,y);
-    ctx.fillStyle = this.obj.color;
+    ctx.fillStyle = this.details.color;
 
     ctx.beginPath();
     //trunk
