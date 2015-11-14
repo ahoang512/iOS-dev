@@ -14,7 +14,7 @@
 
   GameView.prototype.setupMap = function () {
     var ctx = this.canvas.getContext("2d");
-    ctx.fillStyle = "#008080";
+    ctx.fillStyle = "#DDDDDD";
     var leftX = 0;
     var rightX = this.game.DIM_X/2 + 50;
     var Y = this.game.DIM_Y - this.game.floorHeight;
@@ -26,6 +26,7 @@
     var tank1 = new Tanks.Tank(0);
     var tank2 = new Tanks.Tank(1);
     tank1.draw(ctx,150,282.5);
+//    ctx.translate(-150,-282.5);
     tank2.draw(ctx,650,282.5);
   };
 
