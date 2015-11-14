@@ -32,6 +32,63 @@
     ctx.fillRect(rightX,Y ,width , height);
   };
 
+  GameView.prototype.bindKeyHandlers = function () {
+    //copied from my snake game
+    //handlers for wasd, arrow keys, spacebar and enter
+    key('s', function(){
+      if ('n' !== snake.dir){
+        snake.turn('s');
+      }
+    });
+    key('d', function(){
+      if ('w' !== snake.dir){
+        snake.turn('e');
+      }
+    });
+    key('w', function(){
+      if ('s' !== snake.dir) {
+        snake.turn('n');
+      }
+    });
+    key('a', function(){
+      if ('e' !== snake.dir){
+        snake.turn('w');
+      }
+    });
+    key('down', function(){
+      if ('n' !== snake.dir){
+        snake.turn('s');
+      }
+    });
+    key('right', function(){
+      if ('w' !== snake.dir){
+        snake.turn('e');
+      }
+    });
+    key('up', function(){
+      if ('s' !== snake.dir) {
+        snake.turn('n');
+      }
+    });
+    key('left', function(){
+      if ('e' !== snake.dir){
+        snake.turn('w');
+      }
+    });
+    key('space', function() {
+      this.snake.pause();
+    });
+
+    key('enter', function() {
+      if (this.snake.gameOver){
+        this.board.reset();
+        this.snake.reset();
+        this.start();
+      }
+
+    });
+  };
+
   //get this function into tank.js
   //and try to associate it with Tank.Tanks
   GameView.prototype.start = function () {
