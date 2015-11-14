@@ -25,10 +25,8 @@
 
     var tank1 = new Tanks.Tank(0);
     var tank2 = new Tanks.Tank(1);
-    //edits v v v
     tank1.draw(ctx,150,282.5);
-    tank2.draw(ctx,450,282.5);
-    //this.draw(ctx,150,282.5); //tank can be drawn
+    tank2.draw(ctx,650,282.5);
   };
 
   //get this function into tank.js
