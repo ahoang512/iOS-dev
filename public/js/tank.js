@@ -5,17 +5,19 @@
 
   var Tank = Tanks.Tank = function (team) {
     // 0 red, 1 blue
-    var obj;
-//    if (team === 0){
-//      obj.color = "#FF0000";
-//    }else{
-//      obj.color = "#0000FF";
-//    }
+    var obj = 0;
+    this.obj = obj;
+
+    if (team === 0){
+      obj.color = "#FF0000";
+    }else{
+      obj.color = "#0000FF";
+    }
   }
 
   Tank.prototype.draw = function(ctx) {
       ctx.translate(150,282.5);
-      ctx.fillStyle = "#0000FF";
+      ctx.fillStyle = obj.color;
 
       ctx.beginPath();
       //trunk
