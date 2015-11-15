@@ -10,7 +10,7 @@
   };
 
   MovingObject.prototype.move = function () {
-    if(this.pos[1] > 300) //if above ground, gravity effects it (for Tanks only)
+    if(this.pos[1] < 300) //if above ground, gravity effects it (for Tanks only)
       this.pos = [this.pos[0], this.pos[1] + 9.8]; //use as velocity for now
   }
 
