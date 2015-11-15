@@ -14,11 +14,11 @@
 
   GameView.prototype.setupMap = function () {
     var ctx = this.canvas.getContext("2d");
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     _drawFloor(ctx);
     this.game.tanks.forEach(function(tank){
       tank.draw(ctx);
     });
-
   };
 
   var _drawFloor = function (ctx) {
@@ -89,19 +89,14 @@
     });
   };
 
-  //get this function into tank.js
-  //and try to associate it with Tank.Tanks
   GameView.prototype.start = function () {
     var gameView = this;
+
     this.timerId = setInterval(
       function () {
-        //gameView.game.step();
-        //gameView.game.draw(gameView.ctx);
-        this.game.tanks.forEach(function(tank){
-          tank.move();
-        });
+        gameView.game.step();
         gameView.setupMap();
-      }, 1000/32
+       }, 1000/32
     );
   };
 

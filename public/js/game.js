@@ -8,7 +8,13 @@
     this.DIM_Y = height;
     this.floorHeight = 100;
     this.tanks = [ new Tanks.Tank(0), new Tanks.Tank(1)];
+    this.gravity = -9.8;
   };
 
+Game.prototype.step = function () {
+  this.tanks.forEach(function (object) {
+    object.move();
+  });
+}
 
 })(this);
