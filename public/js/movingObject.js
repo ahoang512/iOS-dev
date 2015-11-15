@@ -9,9 +9,12 @@
     this.game = details.game;
   };
 
-  MovingObject.prototype.move = function () {
+  MovingObject.prototype.move = function (move) {
     if(this.pos[1] < 300) //if above ground, gravity effects it (for Tanks only)
       this.pos = [this.pos[0], this.pos[1] + 9.8]; //use as velocity for now
+
+    this.pos[0] += move[0];
+    this.pos[1] += move[1];
   }
 
 })(window, document);

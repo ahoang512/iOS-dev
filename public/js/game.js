@@ -13,7 +13,7 @@
 
 Game.prototype.step = function () {
   this.tanks.forEach(function (object) {
-    object.move();
+    object.move([0,0]);
   });
 }
 
