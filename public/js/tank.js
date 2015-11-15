@@ -8,10 +8,10 @@
     var details = {};
     this.details = details;
     if (team === 0){
-      details.pos = [150,282.5];
+      details.pos = [150,0];//282.5];
       details.color = "#FF0000";
     }else{
-      details.pos = [650,282.5];
+      details.pos = [650,0];//282.5];
       details.color = "#0000FF";
     }
   }
@@ -55,6 +55,7 @@
 
     ctx.fill();
 
+    //resets ctx for absolute positioning
     ctx.translate(-x,-y);
   };
 

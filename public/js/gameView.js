@@ -96,7 +96,11 @@
     this.timerId = setInterval(
       function () {
         //gameView.game.step();
-        gameView.game.draw(gameView.ctx);
+        //gameView.game.draw(gameView.ctx);
+        this.game.tanks.forEach(function(tank){
+          tank.move();
+        });
+        gameView.setupMap();
       }, 1000/32
     );
   };
