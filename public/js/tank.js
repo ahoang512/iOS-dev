@@ -7,11 +7,12 @@
     // 0 red, 1 blue
     var details = {};
     this.details = details;
+    this.details.radius = 18; //dist from pos -> bottom is 18
     if (team === 0){
-      details.pos = [150,200.5];
+      details.pos = [150,0];
       details.color = "#FF0000";
     }else{
-      details.pos = [650,200.5];
+      details.pos = [650,0];
       details.color = "#0000FF";
     }
 
@@ -20,7 +21,7 @@
 
   Tanks.Util.inherits(Tank, Tanks.MovingObject);
 
-  Tank.prototype.draw = function(ctx) {
+  Tank.prototype.draw = function (ctx) {
     var x = this.pos[0];
     var y = this.pos[1];
 

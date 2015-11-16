@@ -24,9 +24,9 @@
 
   GameView.KEYS = {
     // "w": [ 0, -1],
-    "a": [-1,  0],
+    "a": [-5,  0],
     // "s": [ 0,  1],
-    "d": [ 1,  0],
+    "d": [ 5,  0],
   };
 
   var _drawFloor = function (ctx) {
@@ -110,9 +110,10 @@
       function () {
         gameView.game.step();
         gameView.setupMap();
-       }, 1000/32
+      }, 1
     );
   };
+
 
   GameView.prototype.stop = function () {
     clearInterval(this.timerId);
