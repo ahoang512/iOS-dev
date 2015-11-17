@@ -14,7 +14,7 @@
 
   MovingObject.prototype.move = function (move) {
     if(this.pos[1] + this.radius < 300) {
-      this.time += 0.001; //increment air time
+      this.time += 1/32; //increment air time
       this.pos = [this.pos[0], this.pos[1] + (1/2)*this.gravity*(Math.pow(this.time,2))];
     }
 

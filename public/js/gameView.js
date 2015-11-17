@@ -8,25 +8,29 @@
     this.canvas = canvas;
     this.canvas.width = game.DIM_X;
     this.canvas.height = game.DIM_Y;
-    this.setupMap();
+    this.updateView();
     this.bindKeyHandlers();
     this.timeId = null;
   }
 
-  GameView.prototype.setupMap = function () {
+  GameView.prototype.updateView = function () {
     var ctx = this.canvas.getContext("2d");
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     _drawFloor(ctx);
     this.game.tanks.forEach(function(tank){
       tank.draw(ctx);
     });
+    
+    ctx.font="20px Georgia";
+    this.game.turn === 0 ? ctx.fillStyle = "red" : ctx.fillStyle = "blue";
+    ctx.fillText(this.game.timer/1000 + "s",720,15);
   };
 
   GameView.KEYS = {
     // "w": [ 0, -1],
-    "a": [-5,  0],
+    "a": [-1,  0],
     // "s": [ 0,  1],
-    "d": [ 5,  0],
+    "d": [ 1,  0],
   };
 
   var _drawFloor = function (ctx) {
@@ -49,71 +53,18 @@
       });
     })
 
-    // key('s', function(){
-    //   if ('n' !== snake.dir){
-    //     snake.turn('s');
-    //   }
-    // });
-    // key('d', function(){
-    //   if ('w' !== snake.dir){
-    //     snake.turn('e');
-    //   }
-    // });
-    // key('w', function(){
-    //   if ('s' !== snake.dir) {
-    //     snake.turn('n');
-    //   }
-    // });
-    // key('a', function(){
-    //   if ('e' !== snake.dir){
-    //     snake.turn('w');
-    //   }
-    // });
-    // key('down', function(){
-    //   if ('n' !== snake.dir){
-    //     snake.turn('s');
-    //   }
-    // });
-    // key('right', function(){
-    //   if ('w' !== snake.dir){
-    //     snake.turn('e');
-    //   }
-    // });
-    // key('up', function(){
-    //   if ('s' !== snake.dir) {
-    //     snake.turn('n');
-    //   }
-    // });
-    // key('left', function(){
-    //   if ('e' !== snake.dir){
-    //     snake.turn('w');
-    //   }
-    // });
-    // key('space', function() {
-    //   this.snake.pause();
-    // });
-    //
-    // key('enter', function() {
-    //   if (this.snake.gameOver){
-    //     this.board.reset();
-    //     this.snake.reset();
-    //     this.start();
-    //   }
-    //
-    // });
   };
 
   GameView.prototype.start = function () {
     var gameView = this;
-
+    gameView.game.start();
     this.timerId = setInterval(
       function () {
         gameView.game.step();
-        gameView.setupMap();
-      }, 1
+        gameView.updateView();
+      }, 1000/32
     );
   };
-
 
   GameView.prototype.stop = function () {
     clearInterval(this.timerId);
