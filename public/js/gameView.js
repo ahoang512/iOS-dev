@@ -20,7 +20,7 @@
     this.game.tanks.forEach(function(tank){
       tank.draw(ctx);
     });
-    
+
     ctx.font="20px Georgia";
     this.game.turn === 0 ? ctx.fillStyle = "red" : ctx.fillStyle = "blue";
     ctx.fillText(this.game.timer/1000 + "s",720,15);
@@ -49,7 +49,7 @@
     var that = this;
     Object.keys(GameView.KEYS).forEach(function(button){
       key(button, function(){
-        that.game.tanks[0].move(GameView.KEYS[button]);
+        that.game.currentTank().move(GameView.KEYS[button]);
       });
     })
 

@@ -4,6 +4,7 @@
   }
 
   var MovingObject = Tanks.MovingObject = function (details) {
+    this.allObjects = [];
     this.pos = details.pos;
     this.vel = details.vel;
     this.game = details.game;

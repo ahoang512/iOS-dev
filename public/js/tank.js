@@ -10,10 +10,10 @@
     this.details.radius = 18; //dist from pos -> bottom is 18
     if (team === 0){
       details.pos = [150,0];
-      details.color = "#FF0000";
+      details.color = 'red'
     }else{
       details.pos = [650,0];
-      details.color = "#0000FF";
+      details.color = 'blue';
     }
 
     Tanks.MovingObject.call(this, details)
